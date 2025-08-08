@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="author" content="Helen, Rukiya, Reuhen, Jimmy">
+    <meta name="description" content="Weather Wise Project - A weather application that provides current weather data and forecasts.">
+    <meta name="keywords" content="weather, forecast, climate, temperature, humidity, wind speed">
+    <title>Weather Wise Project</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" 
+          rel="stylesheet"
+          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" 
+          crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar">
+        <div class="logo-brand-wrapper">
+        <img id="logo" src="Weather-logo.png" alt="Weather App Logo">
+        <a class="navbar-brand" style="text-decoration: none" href="home.html">WeatherWise</a>
+        </div>
+
+        <form class="form-inline">
+        <input class="formInput" type="search" placeholder="Enter City" aria-label="Search">
+        <button class="searchbar" type="submit">Get Weather</button>
+        </form>
+    </nav>
+
+    <video autoplay muted loop id="weather-video">
+        <source src="videos/default.mp4" type="video/mp4">
+    </video>
+  
+
+    <div class="card">
+    </div>
+
+
+    <div class="container mt-4">
+
+      <div class="hourly-forecast-section mb-4">
+        <div class="section-title">
+          <h3 id="city-name">Hourly Forecast</h3>
+        </div>
+        <div class="hourly-cards-container"></div>
+      </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="day-forecast-section mb-4">
+            <h3>5-day Forecast</h3>
+            <div class="container" id="forecast-row">
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="weather-data-section row  mb-4">
+            <h3>More data</h3>
+            <div class="col">
+                <div class="weather-card text-center p-3 shadow-sm">
+                    <h5>Air Quality</h5>
+                    <img class="card-img-top mx-auto" src="images/air-quality-icon.png" alt="Air Quality Icon">
+                    <p id="air-quality"></p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="weather-card text-center p-3 shadow-sm">
+                    <h5>Humidity</h5>
+                    <img class="card-img-top mx-auto" src="images/humidity-icon.png" alt="Humidity Icon">
+                    <p id="humidity"></p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="weather-card text-center p-3 shadow-sm">
+                    <h5>UV Index</h5>
+                    <img class="card-img-top mx-auto" src="images/uv-index-icon.png" alt="UV Index Icon">
+                    <p id="uv-index"></p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="weather-card text-center p-3 shadow-sm">
+                    <h5>Wind</h5>
+                    <img class="card-img-top mx-auto" src="images/wind-icon.png" alt="Wind Icon">
+                    <p id="wind"></p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="weather-card text-center p-3 shadow-sm">
+                    <h5>Pressure</h5>
+                    <img class="card-img-top mx-auto" src="images/pressure-icon.png" alt="Pressure Icon">
+                    <p id="pressure"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="fact-section">
+            <h3 class="mx-auto pt-4"> Fact of the Day</h3>
+            <p id="fun-fact">Loading fun fact...</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content text-center py-3">
+            <p>&copy; 2025 WeatherWise</p>
+            <p>
+            Data from <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+  </body>
+</html>
