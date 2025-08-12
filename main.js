@@ -27,6 +27,35 @@ const weatherApi = `https://api.weatherapi.com/v1/current.json?key=${weatherApiK
 
 let city;
 
+// Get the current location
+const locationApi = "http://ip-api.com/json";
+async function getCurrentLocation() {
+    try {
+        const response = await fetch(locationApi);
+        const data = await response.json();
+
+        if (data && data.city) {
+            console.log("Location data:", data);
+            // Set the city variable to the current city
+            city = data.city;
+            console.log("Current city:", city);
+
+            const weatherData = await getWeatherData(city);
+            displayWeatherInfo(weatherData);
+            loadWeatherData(city);
+            showWeather(city);
+            showForecast(city);
+            showFunFact();
+            showCityImage(city);
+        }
+    } catch (error) {
+        console.error("Error detecting location:", error);
+    }
+}
+
+getCurrentLocation()
+
+
 // Main input event
 weatherForm.addEventListener('submit', async event => {
 
